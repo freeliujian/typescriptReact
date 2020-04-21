@@ -1,21 +1,23 @@
 import * as React from "react"
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import  loadingComponent from './Router/loadingComponent'
 import Loadable from 'react-loadable';
-
+import 'antd/dist/antd.css';
 
 const RouterList:any[]=[
   {
     path:'/',
     component:()=>import('./pages/home'),
-    name:'index'
+    name:'index',
+    exact:true,
   },
   {
     path:'/login',
     component:()=>import('./pages/login'),
-    name:'login'
+    name:'login',
+    exact:false,
   }
 ]
 
@@ -31,7 +33,7 @@ function App() {
               });
               
               return (
-                <Route path={item.path} component={Component} exact key={item.name}></Route>
+                <Route path={item.path} component={Component} exact={item.exact} key={item.name}></Route>
               )
             })}
             
