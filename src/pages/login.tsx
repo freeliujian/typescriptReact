@@ -1,115 +1,160 @@
 import * as React from "react"
 import {connect} from 'react-redux'
-import {ISLOGIN} from '../constants/Login'
-import {LoginSatteType} from '../reducers/Login'
-import { Input } from 'antd';
+import { ISLOGINACCOUNT ,ISLOGINPSD,ISLOGIN} from '../constants/Login'
+import {LoginActions,IsLoginActions} from '../actions/Login'
+import {LoginSatteType,} from '../reducers/Login'
+import { Input ,Button} from 'antd';
 import { UserOutlined,KeyOutlined } from '@ant-design/icons';
 import Logo from '../assets/logo.png'
 import {Route,Switch,Link} from 'react-router-dom'
 import Register from './Register'
-
 import './Login.scss'
 
 interface PathType { 
     path:string
 }
-
-interface LoginProp {
-    match:PathType
+interface LoginHistroyType {
+    push:(pathname:string)=>void
 }
-
-interface Prop { 
-    index:Number
-}
-
 interface Logintypes {
     Login:LoginSatteType
 }
+interface FristLoginProp extends Logintypes{
+    match:PathType,
+    history:LoginHistroyType,
+    LoginAccountActions:(AccountActions:LoginActions)=>void,
+    LoginPwdActions:(PwdAcions:LoginActions)=>void,
+    IsloginActions:(Actions:IsLoginActions)=>void,
+}
 
 
 
-class FristLogin extends React.Component<LoginProp> { 
-    constructor(props:LoginProp){
+class FristLogin extends React.Component<FristLoginProp> {
+    constructor(props:FristLoginProp){
         super(props)
+ 
+    }
+    render(){
+        return (
+            <div className='Login'>
+                            
+                <div className='input-box'>
+                    <Input size='large' placeholder="请输入你的账号"  prefix={<UserOutlined />}  onChange={this.isinput.bind(this,'account')}/>
+                </div>
+                <div className='input-box'>
+                    <Input.Password  size='large' placeholder="请输入你的密码"  prefix={<KeyOutlined />}  onChange={this.isinput.bind(this,'pwd')}/>
+                </div>
+            </div> 
+        )
+    }
+    isinput(name:string,e:React.ChangeEvent<HTMLInputElement>){
+        e.persist();
+        const {LoginAccountActions,LoginPwdActions} =  this.props;
+        console.log(e,name)
+        if(name=='account'){
+            LoginAccountActions({
+                type:ISLOGINACCOUNT,
+                info:e.target.value.trim()
+            })
+        }else{
+            LoginPwdActions({
+                type:ISLOGINPSD,
+                info:e.target.value.trim()
+            })
+        }
+        
+
     }
 
+
+}
+const FristLoginmapStateToProps = (state: Logintypes): object => {
+    return {}
+}
+const FristLoginmapDispatchToProps = (dispatch: any) => {
+    return {
+        LoginAccountActions: (AccountActions:LoginActions)=>{
+            dispatch(AccountActions)
+        },
+        LoginPwdActions:(PwdAcions:LoginActions)=>{
+            dispatch(PwdAcions)
+        },
+    }
+}
+
+const FristLogins =connect(
+    FristLoginmapStateToProps,
+    FristLoginmapDispatchToProps
+)(FristLogin)
+
+class Login extends React.Component<FristLoginProp> {
+    constructor(props:FristLoginProp){
+        super(props)
+    }
 
     render(){
         const {path} = this.props.match;
         return (
-           
-            <div className="jinghe_Vodsystem">
-                <img src={Logo} alt=""/>
-                <p>
-                    年卡会员点播系统
-                </p>
-                <div className="Register">
-                    <div className="title">
-                        <Link to={`${path}`}>
-                            登录
-                        </Link>
-                        |
-                        <Link to={`${path}/register`}>
-                            注册
-                        </Link>
-                    </div>
-                    <div className="Login">
-                        <div className='Login-box'>
-                        
-                            <div className='input-box'>
-                                <Input size='large' placeholder="账号" prefix={<UserOutlined />} />
-                            </div>
-                            <div className='input-box'>
-                                <Input size='large' placeholder="密码" prefix={<KeyOutlined />} />
-                            </div>
-                        
+            <div className="jinghe_Vodsystem_warpper">
+                <div className="jinghe_Vodsystem">
+                    <img src={Logo} alt=""/>
+                    <p>
+                        年卡会员点播系统
+                    </p>
+                    <div className="login-planel">
+                        <div className="title">
+                            <Link to={`${path}/loginPanel`}>
+                                登录
+                            </Link>
+                            |
+                            <Link to={`${path}/register`}>
+                                注册
+                            </Link>
                         </div>
+                        <Switch>
+                            <Route exact path={`${path}/register`} component={Register}></Route>
+                            <Route exact path={`${path}/loginPanel`} component={FristLogins}></Route>
+                        </Switch>
+                        <div className='login-btn-warpper'>
+                        <Button type="primary" onClick={this.hanleClickLogin.bind(this)}>登录</Button>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
-            
-            
         )
     }
-}
-
-
-class Login extends React.Component<LoginProp> {
-    constructor(props:LoginProp){
-        super(props)
+    
+    hanleClickLogin(){
+        const {IsloginActions,Login} = this.props
+        
+        let data = {
+            info:Login,
+            type:ISLOGIN
+        }
+        console.log(data)
+        // IsloginActions(data)
     }
-
-    render(){
-       
-       const {path} = this.props.match;
-       console.log(path)
-        return (
-            <div className="jinghe_Vodsystem_warpper">
-                {/* <Route exact path={`${path}`} component={FristLogin}></Route>
-                
-                <Switch>
-                    <Route exact path={`${path}/register`} component={Register}></Route>
-                    
-                </Switch> */}
-                111
-            </div>
-        )
-    }
+ 
 }
 
 const mapStateToProps = (state: Logintypes): object => {
-    return { Login: state.Login }
-}
-
-export const mapDispatchToProps = (dispatch: any) => {
     return {
-        fetchArticle: (Id: string) => dispatch({ type: ISLOGIN, Id })
+        Login :state.Login
+    }
+}
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        IsloginActions:(Actions:IsLoginActions)=>{
+            console.log(Actions)
+           // dispatch(Actions)
+        },
     }
 }
 
-// export default connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-// )(Login)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Login)
 
-export default Login
+// export default Login

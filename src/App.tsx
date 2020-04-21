@@ -1,10 +1,11 @@
 import * as React from "react"
 import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
-import  loadingComponent from './Router/loadingComponent'
+import ConnectRoute from './components/Hoc/connectRoute'
+import  LoadingComponent from './Router/loadingComponent'
 import Loadable from 'react-loadable';
 import 'antd/dist/antd.css';
+import Login from './pages/login'
 
 const RouterList:any[]=[
   {
@@ -12,6 +13,7 @@ const RouterList:any[]=[
     component:()=>import('./pages/home'),
     name:'index',
     exact:true,
+    
   },
   {
     path:'/login',
@@ -22,6 +24,7 @@ const RouterList:any[]=[
 ]
 
 function App() {
+ 
   return (
     <div className="App">
       <Router>
@@ -29,16 +32,17 @@ function App() {
             {RouterList.map((item,index)=>{
               const Component = Loadable({
                   loader:item.component,
-                  loading:loadingComponent
+                  loading:LoadingComponent
               });
               
               return (
-                <Route path={item.path} component={Component} exact={item.exact} key={item.name}></Route>
+                <Route path={item.path} component={ConnectRoute(Component)} exact={item.exact} key={item.name}></Route>
               )
             })}
             
           </Switch>
       </Router>
+     
     </div>
   );
 }

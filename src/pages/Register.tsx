@@ -15,7 +15,7 @@ class Register extends React.Component<Prop> {
 
 
     render(){
-        console.log(111111)
+       
         return (
             <div>
                 注册

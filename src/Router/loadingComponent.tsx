@@ -1,6 +1,7 @@
-import { Spin } from 'antd'
 import * as React from 'react'
+import { Spin } from 'antd'
 
+import './loadingComponents.scss'
 
 const loadingComponent = () => (
     <div className="spin">
