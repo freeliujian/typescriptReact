@@ -3,7 +3,7 @@ import {LoginSatteType} from '../reducers/Login'
 import { call, put, takeEvery } from 'redux-saga/effects'
 import axios from 'axios'
 
-export type ActionLoginType = ISLOGINPSD | ISLOGINACCOUNT
+export type ActionLoginType = ISLOGINPSD | ISLOGINACCOUNT | ISLOGIN |string
 
 export interface LoginActions {
     info: string,
@@ -14,15 +14,6 @@ export interface IsLoginActions{
     info: LoginSatteType,
     type: ActionLoginType
 }
-// function* yieldArticles(action: ArticlesAction) {
-//     const { payload } = action
-//     const response = yield call(fetchArticles, payload)
-//     const { articles, total } = response
-//     yield put({ type: RECEIVE_ARTICLES, articles, total })
-// }
-// export function* watchYieldArticles() {
-//     yield takeEvery(REQUEST_ARTICLES, yieldArticles)
-// }
 
 function* Islogin(action:LoginActions) {
     const {info} = action;
@@ -33,6 +24,8 @@ function* Islogin(action:LoginActions) {
 }
 
 export function* IsloginActions() {
+    
+
     yield takeEvery(ISLOGIN, Islogin);
 }
 

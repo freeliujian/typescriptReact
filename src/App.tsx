@@ -5,7 +5,6 @@ import ConnectRoute from './components/Hoc/connectRoute'
 import  LoadingComponent from './Router/loadingComponent'
 import Loadable from 'react-loadable';
 import 'antd/dist/antd.css';
-import Login from './pages/login'
 
 const RouterList:any[]=[
   {

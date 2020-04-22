@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { ISLOGINACCOUNT ,ISLOGINPSD,ISLOGIN} from '../constants/Login'
 import {LoginActions,IsLoginActions} from '../actions/Login'
 import {LoginSatteType,} from '../reducers/Login'
-import { Input ,Button} from 'antd';
+import { Input ,Button,message} from 'antd';
 import { UserOutlined,KeyOutlined } from '@ant-design/icons';
 import Logo from '../assets/logo.png'
 import {Route,Switch,Link} from 'react-router-dom'
@@ -51,7 +51,7 @@ class FristLogin extends React.Component<FristLoginProp> {
         e.persist();
         const {LoginAccountActions,LoginPwdActions} =  this.props;
         console.log(e,name)
-        if(name=='account'){
+        if(name==='account'){
             LoginAccountActions({
                 type:ISLOGINACCOUNT,
                 info:e.target.value.trim()
@@ -127,13 +127,21 @@ class Login extends React.Component<FristLoginProp> {
     
     hanleClickLogin(){
         const {IsloginActions,Login} = this.props
-        
+    
+        if(Login.username===''){
+            message.info('请输入你的账号')
+            return
+        }
+        if(Login.password===''){
+            message.info('请输入你的密码')
+            return
+        }
         let data = {
             info:Login,
             type:ISLOGIN
         }
-        console.log(data)
-        // IsloginActions(data)
+       
+        IsloginActions(data)
     }
  
 }
@@ -146,8 +154,8 @@ const mapStateToProps = (state: Logintypes): object => {
 const mapDispatchToProps = (dispatch: any) => {
     return {
         IsloginActions:(Actions:IsLoginActions)=>{
-            console.log(Actions)
-           // dispatch(Actions)
+           
+            dispatch(Actions)
         },
     }
 }
@@ -157,4 +165,3 @@ export default connect(
     mapDispatchToProps
 )(Login)
 
-// export default Login
