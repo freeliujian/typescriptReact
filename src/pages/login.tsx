@@ -7,27 +7,20 @@ import { Input ,Button,message} from 'antd';
 import { UserOutlined,KeyOutlined } from '@ant-design/icons';
 import Logo from '../assets/logo.png'
 import {Route,Switch,Link} from 'react-router-dom'
+import {PathType,PushHistroyType} from './history'
 import Register from './Register'
 import './Login.scss'
 
-interface PathType { 
-    path:string
-}
-interface LoginHistroyType {
-    push:(pathname:string)=>void
-}
 interface Logintypes {
     Login:LoginSatteType
 }
 interface FristLoginProp extends Logintypes{
     match:PathType,
-    history:LoginHistroyType,
+    history:PushHistroyType,
     LoginAccountActions:(AccountActions:LoginActions)=>void,
     LoginPwdActions:(PwdAcions:LoginActions)=>void,
     IsloginActions:(Actions:IsLoginActions)=>void,
 }
-
-
 
 class FristLogin extends React.Component<FristLoginProp> {
     constructor(props:FristLoginProp){
@@ -68,9 +61,7 @@ class FristLogin extends React.Component<FristLoginProp> {
 
 
 }
-const FristLoginmapStateToProps = (state: Logintypes): object => {
-    return {}
-}
+
 const FristLoginmapDispatchToProps = (dispatch: any) => {
     return {
         LoginAccountActions: (AccountActions:LoginActions)=>{
@@ -83,7 +74,7 @@ const FristLoginmapDispatchToProps = (dispatch: any) => {
 }
 
 const FristLogins =connect(
-    FristLoginmapStateToProps,
+    null,
     FristLoginmapDispatchToProps
 )(FristLogin)
 
@@ -151,6 +142,7 @@ const mapStateToProps = (state: Logintypes): object => {
         Login :state.Login
     }
 }
+
 const mapDispatchToProps = (dispatch: any) => {
     return {
         IsloginActions:(Actions:IsLoginActions)=>{

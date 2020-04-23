@@ -3,7 +3,7 @@ import { Spin } from 'antd'
 
 import './loadingComponents.scss'
 
-const loadingComponent = () => (
+const loadingComponent:React.SFC = () => (
     <div className="spin">
         <Spin size="large" />
     </div>

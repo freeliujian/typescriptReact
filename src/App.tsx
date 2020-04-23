@@ -33,7 +33,6 @@ function App() {
                   loader:item.component,
                   loading:LoadingComponent
               });
-              
               return (
                 <Route path={item.path} component={ConnectRoute(Component)} exact={item.exact} key={item.name}></Route>
               )
