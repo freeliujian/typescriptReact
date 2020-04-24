@@ -1,19 +1,17 @@
 import * as React from "react"
 import BlogHeader from './Header'
+import BlogSilder from './Silder'
 import {Link} from 'react-router-dom'
-import {Layout} from 'antd'
+import {Layout,Row,Col} from 'antd'
 import './BlogLayout.scss'
-import {PathType,PushHistroyType} from '../../pages/history'
 
-interface Prop extends PathType,PushHistroyType{
+// const Sider = Layout.Sider;
+// const Content = Layout.Content;
+const Footer = Layout.Footer;
+interface Prop {
     //传入组件
-    children:Children,
+    children:any,
 }
-
-interface Children {
-    content?:React.ReactNode
-}
-
 
 
 
@@ -26,12 +24,28 @@ class BlogLayout extends React.Component<Prop>{
 
     render(){
         const {children} = this.props
-        console.log(this.props)
+        
         return (
             <Layout>
-                {/* <BlogHeader push={this.props.push}  path={this.props.path/> */}
-                {children.content}
+                <BlogHeader/>
+                <div className="blog-content-warpper">
+                    <Row>
+                        <Col xs={24} sm={24} md={24} lg={17} xl={17} xxl={14}>
+                            {children.content}
+                        </Col>
+                        <Col xs={24} sm={24} md={24} lg={6} offset={1} xl={6} xxl={6}>
+                            <BlogSilder></BlogSilder>
+                        </Col>
+                    </Row>
+                </div>
                 
+                
+                <Footer>
+                    <div className='fot-char'>
+                        文字居中
+                    </div>
+                    
+                </Footer>
             </Layout>
         )
     }

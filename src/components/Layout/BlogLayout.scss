@@ -1,3 +1,4 @@
+
 .blog-header{
     height: 120px;
     display: flex;
@@ -38,11 +39,55 @@
     line-height: 1.5;
     color: white;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 5px;
     box-sizing: border-box;
     .blog-header-nav-wrapper{
         width: 1000px;
         margin: 0 auto;
         cursor: pointer;
+        .blog-header-nav-list{
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between; 
+           
+            margin-bottom: 0;
+            height: 45px;
+            a{
+                color: white;
+                display: inline-block;
+                padding:5px 10px;
+                box-sizing: border-box;
+                line-height: 2.5;
+                transition: all .25s;
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.65);
+                }
+                &:hover li{
+                    color: #3493ef;
+                }
+            }
+            
+        }
     }
+}
+.blog-content-warpper{
+    width: 1000px;
+    margin:0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    .blog-slider{
+        .blog-silider-notice{
+            margin-bottom: 1.5rem;
+        }
+        .blog-silider-label{}
+    }
+}
+.wx{
+    width: 100px;
+    height: 100px;
+    background:url('../../assets/images/weixincode.png') no-repeat;
+    background-size: cover;
+    background-position: 20% 0;
+}
+.fot-char{
+    text-align: center;
 }

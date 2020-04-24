@@ -1,1 +1,2 @@
-export const INDEX = 'index'
+export const ARTICLELIST = 'articleList'
+export type ARTICLELIST = typeof ARTICLELIST

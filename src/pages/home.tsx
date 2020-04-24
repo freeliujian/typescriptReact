@@ -1,15 +1,22 @@
 import * as React from "react"
 import {Link} from 'react-router-dom'
 import BlogLayout from '../components/Layout/BlogLayout'
-import {PathType,PushHistroyType} from './history'
+// import {PushHistroyType} from './history'
+import {connect} from 'react-redux'
+import {HomeActions} from '../actions/Home'
 import './home.scss'
+import { Row } from "antd"
 
 
-interface HomeProp extends PathType,PushHistroyType{
-
+interface HomeProp  {
+    // history:PushHistroyType
+    pageSize:number,
+    pageIndex:number,
 }
 
-
+interface HomeType { 
+    home:HomeActions
+}
 
   
 // type HomeProp = {
@@ -17,50 +24,56 @@ interface HomeProp extends PathType,PushHistroyType{
 //     Home:
 // }
 
+// 首页
+// <Link to='/login/loginPanel'>
+//     跳转
+// </Link>
+
 
 class HomeContent extends React.Component<HomeProp>{
 
   
-    constructor(props:HomeProp){
-        super(props);
-    }
+    
 
     render(){
+        console.log(this.props)
         return (
             <React.Fragment>
-                <div>
-                    首页
-                    <Link to='/login/loginPanel'>
-                        跳转
-                    </Link>
-                   
+                
+                <div className="blog-article">
+                   <Row>
+
+                   </Row>
                 </div>
             </React.Fragment>
         )
     }
 
-    
+}
+const mapStateToProps = (state: HomeType): object => {
+    return {
+        home:state.home
+    }
 }
 
+const HomeContents =connect(
+    mapStateToProps,
+    null
+)(HomeContent)
 
 class Home extends React.Component<HomeProp>{
     
     constructor(props:HomeProp){
         super(props);
     }
-
     render(){
-        
-        let content = {
-            content :<HomeContent {...this.props}/>
+        const content = {
+            content :<HomeContents {...this.props}/>
         }
-        console.log({...this.props})
         return (
-            <BlogLayout {...this.props}></BlogLayout>
-            
+            <BlogLayout children={content}></BlogLayout>
         )
     }
-
 }
 
 
