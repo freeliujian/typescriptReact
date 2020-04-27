@@ -19,6 +19,12 @@ const RouterList:any[]=[
     component:()=>import('./pages/login'),
     name:'login',
     exact:false,
+  },
+  {
+    path:'/resume',
+    component:()=>import('./pages/resume'),
+    name:'resume',
+    exact:true,
   }
 ]
 

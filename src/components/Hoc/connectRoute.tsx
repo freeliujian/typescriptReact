@@ -2,7 +2,7 @@ import * as React from "react"
 
 
 interface WrappedComponentType{
-    WrappedComponent:React.ComponentType,
+    WrappedComponent:React.ElementType,
     
 }
 

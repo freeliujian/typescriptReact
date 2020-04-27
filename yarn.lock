@@ -1677,6 +1677,11 @@
   resolved "https://registry.npm.taobao.org/@types/stack-utils/download/@types/stack-utils-1.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fstack-utils%2Fdownload%2F%40types%2Fstack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha1-CoUdO9lkmPolwzq3J47TvWXwbD4=
 
+"@types/swiper@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.npm.taobao.org/@types/swiper/download/@types/swiper-5.3.0.tgz#19ad9d0438afea4acb719013da98326d1710ce20"
+  integrity sha1-Ga2dBDiv6krLcZAT2pgybRcQziA=
+
 "@types/tapable@*":
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/@types/tapable/download/@types/tapable-1.0.5.tgz?cache=0&sync_timestamp=1580844951142&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Ftapable%2Fdownload%2F%40types%2Ftapable-1.0.5.tgz#9adbc12950582aa65ead76bffdf39fe0c27a3c02"
@@ -4089,6 +4094,13 @@ dom-serializer@0:
   dependencies:
     domelementtype "^2.0.1"
     entities "^2.0.0"
+
+dom7@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.npm.taobao.org/dom7/download/dom7-2.1.3.tgz#a736f9c3bfbc4ca039a81cd095f97d1d7f3de19c"
+  integrity sha1-pzb5w7+8TKA5qBzQlfl9HX894Zw=
+  dependencies:
+    ssr-window "^1.0.1"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -9288,6 +9300,18 @@ rc-animate@2.x, rc-animate@^2.10.0, rc-animate@^2.10.1, rc-animate@^2.10.2, rc-a
     rc-util "^4.15.3"
     react-lifecycles-compat "^3.0.4"
 
+rc-banner-anim@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.npm.taobao.org/rc-banner-anim/download/rc-banner-anim-2.4.3.tgz#e376a6a24acbef3119cfc4f16f1f52c53def20cd"
+  integrity sha1-43amokrL7zEZz8Txbx9SxT3vIM0=
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.5.0"
+    rc-tween-one "^2.4.0"
+    react-lifecycles-compat "^3.0.4"
+    style-utils "~0.2.0"
+    tween-functions "1.x"
+
 rc-cascader@~1.0.0:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/rc-cascader/download/rc-cascader-1.0.1.tgz?cache=0&sync_timestamp=1582782045634&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-cascader%2Fdownload%2Frc-cascader-1.0.1.tgz#770de1e1fa7bd559aabd4d59e525819b8bc809b7"
@@ -9435,6 +9459,16 @@ rc-progress@~2.5.0:
     babel-runtime "6.x"
     prop-types "^15.5.8"
 
+rc-queue-anim@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.npm.taobao.org/rc-queue-anim/download/rc-queue-anim-1.8.4.tgz#ce6a3f9ebc864bb88140aa38cdef0ce180247483"
+  integrity sha1-zmo/nryGS7iBQKo4ze8M4YAkdIM=
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.6.0"
+    rc-tween-one "^2.5.0"
+    react-lifecycles-compat "^3.0.4"
+
 rc-rate@~2.5.1:
   version "2.5.1"
   resolved "https://registry.npm.taobao.org/rc-rate/download/rc-rate-2.5.1.tgz#55fc5fd23ea9dcc72250b9a889803479f4842961"
@@ -9573,7 +9607,7 @@ rc-trigger@^4.0.0, rc-trigger@~4.0.0:
     rc-animate "^2.10.2"
     rc-util "^4.20.0"
 
-rc-tween-one@^2.2.0:
+rc-tween-one@^2.2.0, rc-tween-one@^2.4.0, rc-tween-one@^2.5.0:
   version "2.6.8"
   resolved "https://registry.npm.taobao.org/rc-tween-one/download/rc-tween-one-2.6.8.tgz?cache=0&sync_timestamp=1575870654998&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-tween-one%2Fdownload%2Frc-tween-one-2.6.8.tgz#75edf141af491a28b18812dc419efa6b0238e2a7"
   integrity sha1-de3xQa9JGiixiBLcQZ76awI44qc=
@@ -10795,6 +10829,11 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
+ssr-window@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/ssr-window/download/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
+  integrity sha1-MHUqakZm53Z/C35qpvwv29DZs2k=
+
 ssri@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npm.taobao.org/ssri/download/ssri-6.0.1.tgz?cache=0&sync_timestamp=1581989245523&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fssri%2Fdownload%2Fssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
@@ -11159,6 +11198,14 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+swiper@^5.3.8:
+  version "5.3.8"
+  resolved "https://registry.npm.taobao.org/swiper/download/swiper-5.3.8.tgz?cache=0&sync_timestamp=1587744311725&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fswiper%2Fdownload%2Fswiper-5.3.8.tgz#25c555d73787d35aa56418b904cb3ed4423bade8"
+  integrity sha1-JcVV1zeH01qlZBi5BMs+1EI7reg=
+  dependencies:
+    dom7 "^2.1.3"
+    ssr-window "^1.0.1"
+
 symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
@@ -11422,7 +11469,7 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tween-functions@~1.2.0:
+tween-functions@1.x, tween-functions@~1.2.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/tween-functions/download/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
   integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=

@@ -1,0 +1,108 @@
+.frist-img{
+    // background: url('https://s2.best-wallpaper.net/wallpaper/1920x1200/1111/Vincent-van-Gogh-Starry-Night_1920x1200.jpg') no-repeat;
+   
+}
+
+.banner-user-elem{
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    .bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+}
+.banner-anim-elem{
+    height: 100%;
+}
+.middle{
+    text-align: center;
+    color: white;
+    position: relative;
+    .resume-page{
+        display: inline-block;
+        
+        margin-top:150px;
+    }
+    .one{
+        width: 500px;
+        height: 350px;
+        h1{
+            font-size: 24px;
+
+            color: white;
+        }
+        .char{
+            font-size: 18px;
+            ul{
+                overflow: hidden;
+                width: 320px;
+                margin: 15px auto;
+                li{
+                    float: left;
+                    width: 80px;
+                    text-align: center;
+                }
+            }
+        }
+        .line{
+            width:100%;
+            height: 4px;
+            margin: 0 auto;
+            background:white;
+        }
+    }
+}
+
+@keyframes myfirst
+{
+    0%   {top:0;left:0;}
+    25%  {top:25%;left: 0%;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
+.banner-box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.animation-box{
+    width: 400px;
+    position: relative;
+    margin: 15px auto 0;
+    .frist-round{
+        width: 125px;
+        height: 125px;
+        border:solid 3px red;
+        margin: 0 auto;
+        border-radius: 50%;
+        position: relative;
+    }
+    .round-item{
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        font-size: 12px;
+        box-sizing: border-box;
+        background: pink;
+        border-radius: 50%;
+        line-height: 2.2;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        
+        
+    }
+    .zhongxin{
+        left: 32%;
+        top:32%
+    }
+
+}
+

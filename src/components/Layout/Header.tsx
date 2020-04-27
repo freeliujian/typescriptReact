@@ -83,7 +83,7 @@ const BlogHeader = () => (
                             delay={400}
                             enter={getEnter}
                             interval={geInterval}
-                            component={TweenOne}
+                    
                             componentProps={{
                                 animation: [
                                     { x: 130, type: 'set' },
