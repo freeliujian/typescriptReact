@@ -57,15 +57,44 @@
             background:white;
         }
     }
+    .two{
+        width: 500px;
+       
+    }
 }
 
-@keyframes myfirst
-{
-    0%   {top:0;left:0;}
-    25%  {top:25%;left: 0%;}
-    50%  {background: blue;}
-    100% {background: green;}
+@keyframes rot {     
+    0% {     
+      -webkit-transform: rotate(0deg);     
+      transform: rotate(0deg);     
+    }     
+    100% {     
+      -webkit-transform: rotate(360deg);     
+      transform: rotate(360deg);     
+    }     
+}  
+
+@keyframes zhongxinrot {     
+    0% {     
+      -webkit-transform: rotate(0deg);     
+      transform: rotate(0deg);     
+    }     
+    100% {     
+      -webkit-transform: rotate(-180deg);     
+      transform: rotate(-360deg);     
+    }     
+}  
+@keyframes childrot {     
+    0% {     
+      -webkit-transform: rotate(0deg);     
+      transform: rotate(0deg);     
+    }     
+    100% {     
+      -webkit-transform: rotate(-360deg);     
+      transform: rotate(-360deg);     
+    }     
 }
+
 
 .banner-box{
     width: 100%;
@@ -74,15 +103,19 @@
 }
 .animation-box{
     width: 400px;
+    height: 400px;
     position: relative;
-    margin: 15px auto 0;
+    margin: 60px auto 0;
     .frist-round{
         width: 125px;
         height: 125px;
-        border:solid 3px red;
+        border:solid 3px #409EFF;
         margin: 0 auto;
         border-radius: 50%;
-        position: relative;
+        position: absolute;
+        left: 35%;
+        top:55px;
+        animation: rot 10s infinite linear;
     }
     .round-item{
         width: 40px;
@@ -96,13 +129,87 @@
         text-align: center;
         cursor: pointer;
         position: absolute;
-        
-        
+        font-weight: 600;
     }
     .zhongxin{
         left: 32%;
-        top:32%
+        top:32%;
+        animation: zhongxinrot 10s infinite linear;
     }
-
+    .round-JS{
+        left: 82%;
+        top:32%;
+        animation: childrot 10s infinite linear;
+        
+    }
+    .round-CSS{
+        left: -15%;
+        top:32%;
+        animation: childrot 10s infinite linear;
+    }
+    .second-round{
+        width: 250px;
+        height:250px;
+        border:dashed 3px #409EFF;
+        margin: 0 auto;
+        border-radius: 50%;
+        position: absolute;
+        left: 20%;
+        animation: childrot 15s infinite linear;
+    }
+    .round2-item{
+        width: 55px;
+        height: 55px;
+        padding: 5px;
+        font-size: 12px;
+        box-sizing: border-box;
+        background: pink;
+        border-radius: 50%;
+        line-height: 3.8;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        font-weight: 600;
+    }
+    .round-Ts{
+        left: -9%;
+        top:38%;
+        animation: rot 15s infinite linear;
+    }
+    .round-Node{
+        left: 91%;
+        top:42%;
+        animation: rot 15s infinite linear;
+    }
+    .round-Vue{
+        left: 80%;
+        top:6%;
+        animation: rot 15s infinite linear;
+    }
+    .round-React{
+        left:75%;
+        top:82%;
+       animation: rot 15s infinite linear;
+    }
+    .round-Flutter{
+        left: 2%;
+        top:5%;
+     animation: rot 15s infinite linear;
+    }
+    .round-LESS{
+        left: 6%;
+        top:79%;
+    animation: rot 15s infinite linear;
+    }
+    .round-Express{
+        left: 37%;
+        top:-13%;
+    animation: rot 15s infinite linear;
+    }
+    .round-Webpack{
+        left: 43%;
+        top:92%;
+   animation: rot 15s infinite linear;
+    }
 }
 
