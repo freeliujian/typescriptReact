@@ -25,6 +25,12 @@ const RouterList:any[]=[
     component:()=>import('./pages/resume'),
     name:'resume',
     exact:true,
+  },
+  {
+    path:'/articles',
+    component:()=>import('./pages/article'),
+    name:'articles',
+    exact:true
   }
 ]
 
@@ -34,7 +40,7 @@ function App() {
     <div className="App">
       <Router>
           <Switch>
-            {RouterList.map((item,index)=>{
+            {RouterList.map((item)=>{
               const Component = Loadable({
                   loader:item.component,
                   loading:LoadingComponent

@@ -10,7 +10,6 @@ import {LikeOutlined,LoadingOutlined} from '@ant-design/icons'
 
 
 interface HomeProp  {
-    // history:PushHistroyType
     pageSize:number,
     pageIndex:number,
     loading:boolean
@@ -46,7 +45,10 @@ class HomeContent extends React.Component<HomeProp>{
                             <div className="blog-article-list">
                                 <div className="article-list-content">
                                     <div className="article-list-title">
+                                        <Link to="articles">
                                         Ts + React +Antd搭建项目
+                                        </Link>
+                                    
                                     </div>
                                     <div className="article-list-summary oneline">
                                         使用ts开发React项目首先得搭建环境，react官方专门为ts提供一套新的脚手架来使开发者更快的搭建Ts+React的环境
@@ -56,27 +58,7 @@ class HomeContent extends React.Component<HomeProp>{
                                             start:2019/5/20
                                         </div>
                                         <div className="articles-footer-item">
-                                        <LikeOutlined /> 赞 11
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col span={24} className='blog-article-col'>
-                            <div className="blog-article-list">
-                                <div className="article-list-content">
-                                    <div className="article-list-title">
-                                        Ts + React +Antd搭建项目
-                                    </div>
-                                    <div className="article-list-summary oneline">
-                                        使用ts开发React项目首先得搭建环境，react官方专门为ts提供一套新的脚手架来使开发者更快的搭建Ts+React的环境
-                                    </div>
-                                    <div className="article-list-footer">
-                                        <div className="articles-footer-item">
-                                            start:2019/5/20
-                                        </div>
-                                        <div className="articles-footer-item">
-                                            <LikeOutlined /> 赞 11
+                                        {/* <LikeOutlined /> 赞 11 */}
                                         </div>
                                     </div>
                                 </div>

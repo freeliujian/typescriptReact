@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 const { Meta } = Card;
 
 const CardIcon = [
-    <Link to='jianli' key='jianli'>
+    <Link to='resume' key='resume'>
         <FormOutlined/>
     </Link>,
     <a href="https://github.com/freeliujian" key='github'>

@@ -17,3 +17,5 @@ class Article extends React.Component<Prop> {
         )
     }
 }
+
+export default Article

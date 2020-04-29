@@ -1,6 +1,5 @@
 import { LoginActions} from '../actions/Login'
 import { ISLOGINPSD , ISLOGINACCOUNT} from '../constants/Login'
-import {ActionLoginType} from '../actions/Login'
 
 export interface LoginSatteType {
     username?:String,

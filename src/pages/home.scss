@@ -5,6 +5,7 @@
         &:nth-child(1){
             margin-top: 0;
         }
+        
         .blog-article-list{
             padding: 18px 24px 13px 24px;
             background: #fff;
@@ -12,6 +13,7 @@
             position: relative;
             -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04);
             box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04);
+            box-sizing: border-box;
             .article-list-content{
                 font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
                 .article-list-title{

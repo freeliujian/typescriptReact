@@ -1,12 +1,6 @@
 import * as React from "react"
-
-import Texty from 'rc-texty';
 import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
-
-
-
-
 
 const SecondResume = ()=>{
     return (

@@ -61,15 +61,9 @@ export interface RouterTitle<T> {
 }
 const headerlist: RouterTitle<string>[] = [{
     router: '/',
-    title: '主页',
+    title: '首页',
     icon: <HomeOutlined />
-}, 
-// {
-//     router: '/article',
-//     title: '详情',
-//     icon: <CopyOutlined />
-// }
-]
+}]
 
 const BlogHeader = () => (
     <React.Fragment>
@@ -83,7 +77,7 @@ const BlogHeader = () => (
                             delay={400}
                             enter={getEnter}
                             interval={geInterval}
-                    
+                            component={TweenOne}
                             componentProps={{
                                 animation: [
                                     { x: 130, type: 'set' },
@@ -110,7 +104,7 @@ const BlogHeader = () => (
 
                                 ]
                             }}>
-                            人生只若初见，何事秋风悲画扇
+                           演示
             </Texty>
                         <TweenOne
                             className="combined-bar"
@@ -144,7 +138,7 @@ const BlogHeader = () => (
                         <ul className='blog-header-nav-list'>
                             {headerlist.map(item => {
                                 return (
-                                    <Link to={item.router} key={item.title}>
+                                    <Link to={item.router} key={item.router}>
                                         <li key={item.title}>
                                             {item.icon} {item.title}
                                         </li>

@@ -1,7 +1,6 @@
 import * as React from "react"
 import BlogHeader from './Header'
 import BlogSilder from './Silder'
-import {Link} from 'react-router-dom'
 import {Layout,Row,Col} from 'antd'
 import './BlogLayout.scss'
 
@@ -20,11 +19,8 @@ class BlogLayout extends React.Component<Prop>{
     constructor(props:Prop){
         super(props);
     }
-
-
     render(){
         const {children} = this.props
-        
         return (
             <Layout>
                 <BlogHeader/>
@@ -39,7 +35,7 @@ class BlogLayout extends React.Component<Prop>{
                     </Row>
                 </div>
                 
-                
+        
                 <Footer>
                     <div className='fot-char'>
                         文字居中

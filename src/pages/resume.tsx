@@ -2,57 +2,66 @@ import * as React from "react"
 import BannerAnim, { Element } from 'rc-banner-anim';
 import FristResume from '../components/ResumeItem/fristPage'
 import SecondResume from '../components/ResumeItem/secondPage'
+import ThirdResume from '../components/ResumeItem/thirdPage'
 import './resume.scss'
 const BgElement = Element.BgElement;
 
 
-interface Prop {
-    index: Number
+
+interface IE {
+    deltaY:number
 }
-
-
-
-class Resume extends React.Component<Prop> {
+const bannerList:any[] =[
+{
+    component:<FristResume/>,
+    bg:"#364D79"
+},{
+    component:<SecondResume/>,
+    bg:"#E6A23C"
+},{
+    component:<ThirdResume/>,
+    bg:"#64CBCC"
+}
+]
+class Resume extends React.Component {
     banner: any
 
-    constructor(prop: Prop) {
-        super(prop)
+    handleWheel(e: IE){
+        if (e.deltaY > 0) {
+            this.banner.next()
+        } else {
+            this.banner.prev()
+        }
     }
-
+    
     render() {
         return (
+            <div onWheel={this.handleWheel.bind(this)}>
                 <BannerAnim
                     prefixCls="banner-user"
                     ref={(c) => { this.banner = c; }}
                 >
-                   
-                    <Element
-                        prefixCls="banner-user-elem"
-                        key="1"
-                    >
-                        <BgElement
-                            key="bg"
-                            className="bg"
-                            style={{
-                                background: '#64CBCC',
-                            }}
-                        />
-                        <SecondResume/>
-                    </Element>
-                    <Element
-                        prefixCls="banner-user-elem"
-                        key="0"
-                    >
-                        <BgElement
-                            key="bg"
-                            className="bg"
-                            style={{
-                                background: '#364D79',
-                            }}
-                        />
-                        <FristResume/>
-                    </Element>
+                    {bannerList.map((item,index)=>{
+                        return (
+                            <Element
+                                prefixCls="banner-user-elem"
+                                key={index}
+                            >
+                                <BgElement
+                                    key="bg"
+                                    className="bg"
+                                    style={{
+                                        background: item.bg,
+                                    }}
+                                />
+                                {item.component}
+                                
+                            </Element>
+                        )
+                    })}
                 </BannerAnim>
+            </div>
+                
 
         )
     }
