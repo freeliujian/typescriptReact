@@ -2,7 +2,32 @@
     // background: url('https://s2.best-wallpaper.net/wallpaper/1920x1200/1111/Vincent-van-Gogh-Starry-Night_1920x1200.jpg') no-repeat;
    
 }
-
+.carousel-warpper{
+    height: 99.5vh;
+    
+}
+.resume-comebackindex{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background:url('../assets/images/touxiang.jpeg') no-repeat;
+    background-size: 100% 100%;
+    z-index: 99;
+    cursor: pointer;
+    animation: rot 5s infinite linear;
+}
+.carousel-warpper-0{
+    background:#85ADA3;
+}
+.carousel-warpper-1{
+    background:#4b5b8a;
+}
+.carousel-warpper-2{
+    background:#9d946d;
+}
 .banner-user-elem{
     text-align: center;
     color: #fff;
@@ -212,4 +237,55 @@
    animation: rot 15s infinite linear;
     }
 }
+.cards{
+    margin: 3% 0;
+    width: 950px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.item{
+    width: 450px;
+    height: 300px;
+    background: white;
+    color: black;
+    text-align: left;
+    padding: 15px;
+    text-indent: 15px;
+    border-radius: 15px;
+    transition: all .45s;
+    margin: 0 10px;
+    .card-title{
+        font-size: 22px;
+       
+        
+        color: #4b5b8a;
+        font-weight: 600;
+    }
+    .card-time{
+        
+        font-size: 15px;
+        margin: 8px 0;
+    }
+    .card-post{
+        font-size: 15px;
+        margin: 8px 0;
+        color: #4b5b8a;
+    }
+    .card-content{
+        width:90%;
+        margin: 0 auto;
+        li{
+            list-style-type: decimal;
+            
+        }
+    }
+}
 
+.three{
+    
+    h1{
+        font-size: 24px;
+        color: white;
+    }
+}

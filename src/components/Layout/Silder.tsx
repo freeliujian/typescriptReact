@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Card, Tooltip } from 'antd'
 import {
-    FormOutlined,
+    ContainerOutlined,
     GithubOutlined,
     WechatOutlined
 } from '@ant-design/icons';
@@ -14,7 +14,7 @@ const { Meta } = Card;
 
 const CardIcon = [
     <Link to='resume' key='resume'>
-        <FormOutlined/>
+        <ContainerOutlined />
     </Link>,
     <a href="https://github.com/freeliujian" key='github'>
         <GithubOutlined/>

@@ -1,0 +1,2 @@
+export const ARTICLEDETAIL = 'ARTICLEDETAIL'
+export type ARTICLEDETAIL = typeof ARTICLEDETAIL

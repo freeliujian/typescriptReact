@@ -71,6 +71,7 @@ class HomeContent extends React.Component<HomeProp>{
                         </Col>
                    </Row>
                 </div>
+               
             </React.Fragment>
         )
     }

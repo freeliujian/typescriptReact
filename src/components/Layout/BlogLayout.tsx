@@ -38,8 +38,8 @@ class BlogLayout extends React.Component<Prop>{
         
                 <Footer>
                     <div className='fot-char'>
-                        文字居中
-                    </div>
+                    @By freeliujian  文字居中
+                    </div> 
                     
                 </Footer>
             </Layout>
