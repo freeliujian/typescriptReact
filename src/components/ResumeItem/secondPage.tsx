@@ -1,6 +1,6 @@
 import * as React from "react"
 import TweenOne from 'rc-tween-one';
-import QueueAnim from 'rc-queue-anim';
+// import QueueAnim from 'rc-queue-anim';
 
 const SecondResume = ()=>{
     return (
@@ -57,7 +57,7 @@ const SecondResume = ()=>{
                         </div>
                     </div>
                 </div>
-                <QueueAnim>
+                {/* <QueueAnim>
                     <div key="1">
                     熟练使用HTML/CSS技术，熟悉Javascript/Typescript编程,能够熟练使用reactjs等框架进行模块开发，
                   
@@ -68,7 +68,7 @@ const SecondResume = ()=>{
                     <div key="3">
                     熟悉Flutter开发手机APP
                     </div>
-                </QueueAnim>
+                </QueueAnim> */}
                
             </div>
         </div>

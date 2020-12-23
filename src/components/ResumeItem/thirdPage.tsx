@@ -58,9 +58,6 @@ const ThirdResume = ()=>{
                             使用node和vue快速开发小工具
                             </li>
                             <li>
-                            使用hook优化公司测评端页面
-                            </li>
-                            <li>
                             同期学习Flutter和dart，了解手机app混合开发模式
                             </li>
                         </ul>

@@ -2,7 +2,7 @@ import * as React from "react"
 
 import Texty from 'rc-texty';
 
-import QueueAnim from 'rc-queue-anim';
+// import QueueAnim from 'rc-queue-anim';
 
 
 

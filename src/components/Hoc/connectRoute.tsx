@@ -1,10 +1,6 @@
 import * as React from "react"
 
 
-interface WrappedComponentType{
-    WrappedComponent:React.ElementType,
-    
-}
 
 interface Props { 
     location:string

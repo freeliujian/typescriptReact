@@ -28,6 +28,9 @@
 .carousel-warpper-2{
     background:#9d946d;
 }
+.carousel-warpper-3{
+    background:#67C23A;
+}
 .banner-user-elem{
     text-align: center;
     color: #fff;
@@ -287,5 +290,24 @@
     h1{
         font-size: 24px;
         color: white;
+    }
+}
+.four-cards{
+    width: 450px;
+    
+    background: white;
+    color: black;
+    text-align: left;
+    padding: 15px;
+   
+    border-radius: 15px;
+    transition: all .45s;
+    margin: 0 10px;
+    h4{
+        a{
+            display: block;
+            text-indent: 20px;
+           
+        }
     }
 }

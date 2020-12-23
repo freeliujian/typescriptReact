@@ -3,6 +3,7 @@ import * as React from "react"
 import FristResume from '../components/ResumeItem/fristPage'
 import SecondResume from '../components/ResumeItem/secondPage'
 import ThirdResume from '../components/ResumeItem/thirdPage'
+import FourthResume from '../components/ResumeItem/fourthPage'
 import { Carousel } from 'antd';
 import {Link} from 'react-router-dom'
 import './resume.scss'
@@ -15,16 +16,24 @@ interface IE {
     deltaY:number
 }
 const bannerList:any[] =[
+   
 {
     component:<FristResume/>,
    
+   
 },{
     component:<SecondResume/>,
+   
     
 },{
     component:<ThirdResume/>,
+   
     
-}
+},
+{
+    component:<FourthResume/>,
+   
+},
 ]
 class Resume extends React.Component {
     banner: any
@@ -51,11 +60,11 @@ class Resume extends React.Component {
                 dotPosition= 'right'
                 ref={(c) => { this.banner = c; }}>
                     {bannerList.map((item,index)=>{
+                        console.log(item.background)
                         return (
                             <div className={[`carousel-warpper carousel-warpper-${index}`].join()} key={index}>
                                    {item.component}
                             </div>
-                            
                         )
                     })}
                 </Carousel>
